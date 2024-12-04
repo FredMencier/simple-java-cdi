@@ -15,3 +15,6 @@ Le projet suivant montre une progression d'un code fortement couplé vers l'util
   - Ainsi le ClientManagerTest peut faire le choix :
     - d'encoder avec Base64EncoderImpl
     - d'encoder avec CustomEncoderImpl
+=> Reste encore un problème : la création de l'instance d'un Encoder doit se faire manuellement :
+    - new Base64EncodeurImpl
+Utiliser un injecteur pour résoudre ce problème -> CDI
