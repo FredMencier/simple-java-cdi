@@ -10,3 +10,8 @@ Le projet suivant montre une progression d'un code fortement couplé vers l'util
   - L'encodage des informations ne peut se faire qu'avec la classe Base64Encoder car elle est déclarée au sein de la classe ClientManager
 
 ## Branche simple-java-cdi-no-cdi-less
+- Code avec une dépendence faible (couplage faible) entre ClientManager et Encoder
+  - Ici on réalise une inversion de control (IoC) car le control de l'encoder est donnée à une classe cliente de ClientManager
+  - Ainsi le ClientManagerTest peut faire le choix :
+    - d'encoder avec Base64EncoderImpl
+    - d'encoder avec CustomEncoderImpl
