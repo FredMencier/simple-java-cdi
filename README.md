@@ -1,1 +1,1 @@
-# simple-standalone-cdi
+# simple-java-cdi
