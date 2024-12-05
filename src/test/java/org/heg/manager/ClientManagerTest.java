@@ -1,33 +1,26 @@
 package org.heg.manager;
 
-import org.apache.log4j.Logger;
-import org.heg.encoder.Base64EncoderImpl;
-import org.heg.encoder.CustomEncoderImpl;
 import org.heg.entity.ClientEntity;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.logging.Logger;
+
+@SpringBootTest
 public class ClientManagerTest {
 
-    private static final Logger LOG = Logger.getLogger(ClientManager.class);
+    private static final Logger LOG = Logger.getLogger(ClientManagerTest.class.getName());
+
+    @Autowired
+    private ClientManager clientManager;
 
     @Test
-    public void createClientCustomEncoder() {
-        ClientManager clientManager = new ClientManager(new CustomEncoderImpl());
-
+    public void createClient() {
         ClientEntity clientEntity = clientManager.createClient("Victor", "Hugo");
-        Assert.assertNotNull(clientEntity.getFirstname());
-        Assert.assertNotNull(clientEntity.getLastname());
-        LOG.info(clientEntity.toString());
-    }
-
-    @Test
-    public void createClientBase64Encoder() {
-        ClientManager clientManager = new ClientManager(new Base64EncoderImpl());
-
-        ClientEntity clientEntity = clientManager.createClient("Victor", "Hugo");
-        Assert.assertNotNull(clientEntity.getFirstname());
-        Assert.assertNotNull(clientEntity.getLastname());
+        Assertions.assertNotNull(clientEntity.getFirstname());
+        Assertions.assertNotNull(clientEntity.getLastname());
         LOG.info(clientEntity.toString());
     }
 }

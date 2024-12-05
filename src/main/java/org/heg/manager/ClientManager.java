@@ -1,22 +1,30 @@
 package org.heg.manager;
 
-import org.apache.log4j.Logger;
-import org.heg.encoder.Encoder;
+import lombok.extern.slf4j.Slf4j;
+import org.heg.encoder.Base64Encoder;
+import org.heg.encoder.NotBeanService;
 import org.heg.entity.ClientEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Slf4j
+@Service
 public class ClientManager {
 
-    private static final Logger LOG = Logger.getLogger(ClientManager.class);
+//    @Autowired
+//    NotBeanService notBeanService;
 
-    private final Encoder encoder;
+    @Autowired
+    private Base64Encoder encoder;
 
-    public ClientManager(Encoder encoder) {
-        this.encoder = encoder;
-    }
+//    private final Base64Encoder encoder;
+//
+//    public ClientManager(Base64Encoder encoder) {
+//        this.encoder = encoder;
+//    }
 
     public ClientEntity createClient(final String firstname, final String lastname) {
         ClientEntity clientEntity = new ClientEntity();
-        clientEntity.setClientId(1L);
         clientEntity.setFirstname(encoder.encodeData(firstname));
         clientEntity.setLastname(encoder.encodeData(lastname));
         return clientEntity;

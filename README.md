@@ -15,3 +15,12 @@ Le projet suivant montre une progression d'un code fortement couplé vers l'util
   - Ainsi le ClientManagerTest peut faire le choix :
     - d'encoder avec Base64EncoderImpl
     - d'encoder avec CustomEncoderImpl
+      => Reste encore un problème : la création de l'instance d'un Encoder doit se faire manuellement :
+    - new Base64EncodeurImpl
+      Utiliser un injecteur pour résoudre ce problème -> CDI
+
+## Branche simple-java-cdi-basic-cdi
+- Code springboot pour apporter CDI avec l'injection du bean Base64Encoder
+  - Injection d'un du bean Base64Encoder par field injection dans la classe ClientManager
+  - Passage en Injection par constructeur (IoC plus souple)
+  - Tentative d'injection d'un bean non managé (NotBeanService)
