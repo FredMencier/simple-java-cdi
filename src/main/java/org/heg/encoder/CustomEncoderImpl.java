@@ -1,10 +1,9 @@
 package org.heg.encoder;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("CustomEncoderImpl")
+@CustomEncoder
 public class CustomEncoderImpl implements Encoder {
 
     public String encodeData(String data) {
