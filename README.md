@@ -43,7 +43,7 @@ Le projet suivant montre une progression d'un code fortement couplé vers l'util
     - @CustomEncoder
 
 ## Branche simple-java-cdi-no-interceptors
-- Code springboot démontrant l'utilisatzion d'un interceptor pour timer le temps passé dans des méthodes
+- Code springboot démontrant l'utilisation d'un interceptor pour timer le temps passé dans des méthodes
   - Dans cette branche on calcul le temps passé dans la méthode createClient manuellement
     - ClientManager (ajout sur chaque méthode de code permettant ce calcul)
 
