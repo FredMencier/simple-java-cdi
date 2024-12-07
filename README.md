@@ -35,3 +35,20 @@ Le projet suivant montre une progression d'un code fortement couplé vers l'util
   - Utilisation du @Qualifier
     - Injection par field
     - Injection par constructeur
+
+## Branche simple-java-cdi-annotations-cdi
+- Code springboot démontrant l'injection CDI du bean Encoder : **multiple implementation**
+  - Utilisation d'une annotation custom permettant de d'identifier le bean
+    - @Base64Encoder
+    - @CustomEncoder
+
+## Branche simple-java-cdi-no-interceptors
+- Code springboot démontrant l'utilisatzion d'un interceptor pour timer le temps passé dans des méthodes
+  - Dans cette branche on calcul le temps passé dans la méthode createClient manuellement
+    - ClientManager (ajout sur chaque méthode de code permettant ce calcul)
+
+## Branche simple-java-cdi-no-interceptors
+- Code springboot démontrant l'utilisatzion d'un interceptor pour timer le temps passé dans des méthodes
+  - Dans cette branche introduit un interceptor afin de remplacer calcul manuel par un automatisme
+    - Ajout de la classe MesurableInterceptor (ajout de l'artifact aspectjweaver). Autrement disponible par transitivite avec le starter jpa
+    - Supression du code de mesure dans ClientManager : **on laisse l'intercepteur faire le travail**
