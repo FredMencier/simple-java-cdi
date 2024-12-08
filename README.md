@@ -43,12 +43,12 @@ Le projet suivant montre une progression d'un code fortement couplé vers l'util
     - @CustomEncoder
 
 ## Branche simple-java-cdi-no-interceptors
-- Code springboot démontrant l'utilisatzion d'un interceptor pour timer le temps passé dans des méthodes
+- Code springboot démontrant l'utilisation d'un interceptor pour timer le temps passé dans des méthodes
   - Dans cette branche on calcul le temps passé dans la méthode createClient manuellement
     - ClientManager (ajout sur chaque méthode de code permettant ce calcul)
 
-## Branche simple-java-cdi-no-interceptors
-- Code springboot démontrant l'utilisatzion d'un interceptor pour timer le temps passé dans des méthodes
+## Branche simple-java-cdi-interceptors
+- Code springboot démontrant l'utilisation d'un interceptor pour timer le temps passé dans des méthodes
   - Dans cette branche introduit un interceptor afin de remplacer calcul manuel par un automatisme
     - Ajout de la classe MesurableInterceptor (ajout de l'artifact aspectjweaver). Autrement disponible par transitivite avec le starter jpa
     - Supression du code de mesure dans ClientManager : **on laisse l'intercepteur faire le travail**
