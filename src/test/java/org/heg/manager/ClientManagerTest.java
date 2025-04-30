@@ -1,8 +1,8 @@
 package org.heg.manager;
 
 import org.apache.log4j.Logger;
-import org.heg.encoder.Base64EncoderImpl;
-import org.heg.encoder.CustomEncoderImpl;
+import org.heg.encoder.Base64Encoder;
+import org.heg.encoder.CustomEncoder;
 import org.heg.entity.ClientEntity;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,7 +13,7 @@ public class ClientManagerTest {
 
     @Test
     public void createClientCustomEncoder() {
-        ClientManager clientManager = new ClientManager(new CustomEncoderImpl());
+        ClientManager clientManager = new ClientManager(new CustomEncoder());
 
         ClientEntity clientEntity = clientManager.createClient("Victor", "Hugo");
         Assert.assertNotNull(clientEntity.getFirstname());
@@ -23,7 +23,7 @@ public class ClientManagerTest {
 
     @Test
     public void createClientBase64Encoder() {
-        ClientManager clientManager = new ClientManager(new Base64EncoderImpl());
+        ClientManager clientManager = new ClientManager(new Base64Encoder());
 
         ClientEntity clientEntity = clientManager.createClient("Victor", "Hugo");
         Assert.assertNotNull(clientEntity.getFirstname());

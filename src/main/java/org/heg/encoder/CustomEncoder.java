@@ -1,6 +1,6 @@
 package org.heg.encoder;
 
-public class CustomEncoderImpl implements Encoder {
+public class CustomEncoder implements Encoder {
 
     public String encodeData(String data) {
         StringBuilder sb = new StringBuilder();
