@@ -2,6 +2,7 @@ package org.heg.manager;
 
 import lombok.extern.slf4j.Slf4j;
 import org.heg.encoder.Base64Encoder;
+import org.heg.encoder.Encoder;
 import org.heg.encoder.NotBeanService;
 import org.heg.entity.ClientEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class ClientManager {
 //    NotBeanService notBeanService;
 
     @Autowired
-    private Base64Encoder encoder;
+    private Encoder encoder;
 
 //    private final Base64Encoder encoder;
 //
